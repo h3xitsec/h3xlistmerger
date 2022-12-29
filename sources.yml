@@ -1,0 +1,206 @@
+usernames:
+  sources:
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/master/data/wordlists/unix_users.txt
+sqli:
+  replace:
+  - pattern: "^ "
+    replacement: ""
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/zapstiko/Bug-Bounty/main/SQLI/SQLI%20Payload
+  - url: https://raw.githubusercontent.com/zapstiko/Bug-Bounty/raw/main/SQLI/MySQL%20Blind%20(Time%20Based)%20Payload%20list
+  - url: https://pastebin.com/raw/rKpsMp0g
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/raw/master/Fuzzing/SQLi/Generic-BlindSQLi.fuzzdb.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/raw/master/Fuzzing/SQLi/Generic-SQLi.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/raw/master/Fuzzing/SQLi/quick-SQLi.txt
+  - url: https://raw.githubusercontent.com/1N3/IntruderPayloads/master/FuzzLists/sqli-error-based.txt
+  - url: https://raw.githubusercontent.com/1N3/IntruderPayloads/master/FuzzLists/sqli_escape_chars.txt
+  - url: https://raw.githubusercontent.com/1N3/IntruderPayloads/master/FuzzLists/sqli-time-based.txt
+  - url: https://raw.githubusercontent.com/1N3/IntruderPayloads/master/FuzzLists/sqli-union-select.txt
+  - url: https://raw.githubusercontent.com/1N3/IntruderPayloads/master/FuzzLists/auth_bypass.txt
+sqli_union:
+  regex: ^.*[uU][nN][iI][oO][nN].*$
+  sources:
+  - url: /home/h3x/work/wordlists/h3x/sqli.txt
+sqli_orderby:
+  regex: ^.*[oO][rR][dD][eE][rR].*$
+  sources:
+  - url: /home/h3x/work/wordlists/h3x/sqli.txt
+directories:
+  regex: .*
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/combined_directories.txt
+  - url: https://raw.githubusercontent.com/1N3/IntruderPayloads/master/FuzzLists/dirbuster-dirs.txt
+words:
+  regex: .*
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/combined_words.txt
+  - url: https://raw.githubusercontent.com/v0re/dirb/master/wordlists/common.txt
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/master/data/wordlists/namelist.txt
+extensions:
+  sources:
+  - url: https://raw.githubusercontent.com/v0re/dirb/master/wordlists/extensions_common.txt
+    regex: ^\.
+  - url: https://raw.githubusercontent.com/v0re/dirb/master/wordlists/mutations_common.txt
+    regex: ^\.
+params:
+  regex: .*
+  replace:
+  - pattern: ^\?
+    replacement: ''
+  - pattern: '=.*$'
+    replacement: ''
+  - pattern: '\*'
+    replacement: ''
+  - pattern: '\$'
+    replacement: ''
+  - pattern: '^\/'
+    replacement: ''
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/burp-parameter-names.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/robots/top-1000.txt
+    regex: '^\?'
+web_content:
+  replace:
+  - pattern: ^\/
+    replacement: ""
+  - pattern: \/$
+    replacement: ""
+  sources:
+  - url: https://raw.githubusercontent.com/Bo0oM/fuzz.txt/master/fuzz.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/Common-PHP-Filenames.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/Frontpage.fuzz.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/Logins.fuzz.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/PHP.fuzz.txt
+  - url: https://raw.githubusercontent.com/0xlittleboy/fuzz4bounty/master/robots.txt
+    regex:
+403bypass:
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/zapstiko/Bug-Bounty/main/403%20Bypass%20Payload
+    regex:
+ssti:
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/zapstiko/Bug-Bounty/main/SSTI
+    regex:
+xss:
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-BruteLogic.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Bypass-Strings-BruteLogic.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Cheat-Sheet-PortSwigger.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Jhaddix.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-OFJAAAH.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-RSNAKE.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Somdev.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-Vectors-Mario.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/XSS-With-Context-Jhaddix.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS/xss-without-parentheses-semi-colons-portswigger.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XSS-Fuzzing
+    regex:
+linux_files:
+  regex: ^\/.*$
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-etc-files-of-all-linux-packages.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/LinuxFileList.txt
+  - url: https://raw.githubusercontent.com/1N3/IntruderPayloads/master/FuzzLists/lfi.txt
+windows_files:
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-gracefulsecurity-windows.txt
+    regex:
+path_traversal:
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-LFISuite-pathtotest-huge.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-LFISuite-pathtotest.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-Jhaddix.txt
+    regex:
+xxe:
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/XXE-Fuzzing.txt
+    regex:
+api_actions:
+  regex: ^[^\/].*
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/api/actions.txt
+    regex:
+api_enpoints:
+  regex: ^[^\/].*
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/api/api-seen-in-wild.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/api/ispsystem_billmanager_api.txt
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/api/objects.txt
+    regex:
+api_paths:
+  replace:
+  - pattern: ^[^\/]
+    replacement: /
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/api/api-endpoints.txt
+  - url: https://raw.githubusercontent.com/0xlittleboy/fuzz4bounty/master/api.txt
+    regex:
+http_headers:
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/BurpSuite-ParamMiner/lowercase-headers
+    regex:
+envvars:
+  regex: ^.*$
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Variables/awesome-environment-variable-names.txt
+    regex:
+subdomains:
+  regex: ^.*$
+  sources:
+  - url: https://github.com/danielmiessler/SecLists/raw/master/Discovery/DNS/combined_subdomains.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/inventory/subdomains.txt
+    regex:
+toplevel_domains:
+  regex: ^[\.].*
+  sources:
+  - url: https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/tlds.txt
+    regex:
+techno_wordpress_plugins:
+  sources:
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/master/data/wordlists/wp-plugins.txt
+techno_wordpress:
+  sources:
+  - url: https://raw.githubusercontent.com/0xlittleboy/fuzz4bounty/master/wordpress.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/wordpress.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/wordpress-all-levels.txt
+    regex:
+techno_laravel:
+  sources:
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/laravel.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/laravel-all-levels.txt
+    regex:
+techno_joomla:
+  sources:
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/joomla.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/joomla-all-levels.txt
+  - url: https://raw.githubusercontent.com/rapid7/metasploit-framework/master/data/wordlists/joomla.txt
+techno_ghost:
+  sources:
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/ghost.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/ghost-all-levels.txt
+    regex:
+techno_drupal:
+  sources:
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/drupal.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/drupal-all-levels.txt
+    regex:
+techno_magento:
+  sources:
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/magento.txt
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/magento-all-levels.txt
+    regex:
+techno_tomcat:
+  sources:
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/tomcat.txt
+    regex: 
+  - url: https://raw.githubusercontent.com/trickest/wordlists/main/technologies/tomcat-all-levels.txt
+    regex:
